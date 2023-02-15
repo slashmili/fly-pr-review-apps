@@ -25,9 +25,6 @@ org="${INPUT_ORG:-${FLY_ORG:-personal}}"
 image="$INPUT_IMAGE"
 config="$INPUT_CONFIG"
 
-echo "DEBUGGING============="
-cat /github/workflow/event.json
-env
 
 if ! echo "$app" | grep "$PR_NUMBER"; then
   echo "For safety, this action requires the app's name to contain the PR number."
