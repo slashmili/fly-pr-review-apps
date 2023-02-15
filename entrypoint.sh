@@ -14,8 +14,8 @@ if [ -z "$PR_NUMBER" ]; then
 fi
 
 
-REPO_OWNER=$(jq -r .event.base.repo.owner /github/workflow/event.json)
-REPO_NAME=$(jq -r .event.base.repo.name /github/workflow/event.json)
+REPO_OWNER=$(jq -r .pull_request.base.repo.owner.login /github/workflow/event.json)
+REPO_NAME=$(jq -r .pull_request.base.repo.name /github/workflow/event.json)
 EVENT_TYPE=$(jq -r .action /github/workflow/event.json)
 
 # Default the Fly app name to pr-{number}-{repo_owner}-{repo_name}
