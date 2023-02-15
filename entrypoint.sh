@@ -26,7 +26,7 @@ image="$INPUT_IMAGE"
 config="$INPUT_CONFIG"
 
 echo "DEBUGGING============="
-echo /github/workflow/event.json
+cat /github/workflow/event.json
 env
 
 if ! echo "$app" | grep "$PR_NUMBER"; then
